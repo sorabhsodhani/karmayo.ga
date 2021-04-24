@@ -1,0 +1,14 @@
+uuid: 0f1ee00c-8233-4fef-bbef-560c47456cb4
+langcode: en
+status: true
+dependencies: {  }
+id: karmayo_society_user
+label: 'Karmayo - Society User'
+weight: 5
+is_admin: null
+permissions:
+  - 'edit own society user pledge entity entities'
+  - 'view published karmayo society entity entities'
+  - 'view published karmayo society tasks entity entities'
+  - 'view published society user pledge entity entities'
+  - 'view published society user points entity entities'

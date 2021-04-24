@@ -1,0 +1,25 @@
+uuid: ed69a6ea-405b-4c51-a1ad-08c222d38ba1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - karmayo
+_core:
+  default_config_hash: siAK1e67EHT0QL9dLWLGFaCuinxY0N0jHsGH0zjHPUI
+id: karmayo_branding
+theme: karmayo
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

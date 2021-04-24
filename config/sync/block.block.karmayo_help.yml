@@ -1,0 +1,22 @@
+uuid: dbdeeafc-306c-41bb-b07f-4b068018be99
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - karmayo
+_core:
+  default_config_hash: RWBdR3xiZQqFnkVP12Zuf9gXX8P_vomYO-MrNa-5mBI
+id: karmayo_help
+theme: karmayo
+region: highlighted
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

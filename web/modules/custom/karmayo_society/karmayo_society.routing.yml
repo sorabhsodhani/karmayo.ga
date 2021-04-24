@@ -1,0 +1,28 @@
+karmayo_society.upload_society_users_tasks_form:
+  path: '/karmayo_society/upload-data/{sid}'
+  defaults:
+    _form: '\Drupal\karmayo_society\Form\UploadSocietyUsersTasksForm'
+    _title: 'UploadSocietyUsersTasksForm'
+  requirements:
+    _access: 'TRUE'
+karmayo_society.society_add_users_form:
+  path: '/society/add-users/{sid}'
+  defaults:
+    _form: '\Drupal\karmayo_society\Form\SocietyAddUsersForm'
+    _title: 'SocietyAddUsersForm'
+  requirements:
+    _access: 'TRUE'
+karmayo_society.society_add_tasks_form:
+  path: '/society/add-tasks/{sid}'
+  defaults:
+    _form: '\Drupal\karmayo_society\Form\SocietyAddTasksForm'
+    _title: 'SocietyAddTasksForm'
+  requirements:
+    _access: 'TRUE'
+karmayo_society.society_user_pick_form:
+  path: '/society/pledge-today/{sid}'
+  defaults:
+    _form: '\Drupal\karmayo_society\Form\SocietyUserPickForm'
+    _title: 'SocietyUserPickForm'
+  requirements:
+    _access: 'TRUE'

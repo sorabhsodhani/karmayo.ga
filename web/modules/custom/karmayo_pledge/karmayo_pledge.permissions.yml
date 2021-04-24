@@ -1,0 +1,33 @@
+add karmayo pledge entities:
+  title: 'Create new Karmayo Pledge entities'
+
+administer karmayo pledge entities:
+  title: 'Administer Karmayo Pledge entities'
+  description: 'Allow to access the administration form to configure Karmayo Pledge entities.'
+  restrict access: true
+
+delete karmayo pledge entities:
+  title: 'Delete Karmayo Pledge entities'
+
+edit karmayo pledge entities:
+  title: 'Edit Karmayo Pledge entities'
+  
+edit own karmayo pledge entities:
+  title: 'Edit own Karmayo Pledge entities'  
+
+view published karmayo pledge entities:
+  title: 'View published Karmayo Pledge entities'
+
+view unpublished karmayo pledge entities:
+  title: 'View unpublished Karmayo Pledge entities'
+
+view all karmayo pledge revisions:
+  title: 'View all Karmayo Pledge revisions'
+
+revert all karmayo pledge revisions:
+  title: 'Revert all Karmayo Pledge revisions'
+  description: 'Role requires permission <em>view Karmayo Pledge revisions</em> and <em>edit rights</em> for karmayo pledge entities in question or <em>administer karmayo pledge entities</em>.'
+
+delete all karmayo pledge revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Karmayo Pledge revisions</em> and <em>delete rights</em> for karmayo pledge entities in question or <em>administer karmayo pledge entities</em>.'

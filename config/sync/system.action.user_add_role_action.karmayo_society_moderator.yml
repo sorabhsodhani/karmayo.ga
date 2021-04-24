@@ -1,0 +1,14 @@
+uuid: a49ec80d-e44e-4d17-aab5-3ece941e4d63
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.karmayo_society_moderator
+  module:
+    - user
+id: user_add_role_action.karmayo_society_moderator
+label: 'Add the Karmayo - Society Moderator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: karmayo_society_moderator

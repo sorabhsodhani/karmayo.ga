@@ -1,0 +1,14 @@
+uuid: e33ef6a5-ae2f-41fd-962d-95160f806598
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.karmayo_life
+  module:
+    - user
+id: user_add_role_action.karmayo_life
+label: 'Add the Karmayo Life role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: karmayo_life

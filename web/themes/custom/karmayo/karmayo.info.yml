@@ -1,0 +1,56 @@
+name: karmayo
+type: theme
+description: 'Karmayo Theme'
+package: Karmayo
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - karmayo/global-styling
+  - karmayo_pledge/global_datatables_library
+ 
+base theme: drupal8_parallax_theme
+
+#Regions
+regions:
+
+  #Header
+  header: 'Header'
+  contact_email: 'Contact email'
+  top_menu: 'Top menu'
+  primary_menu: 'Primary menu'  
+
+  #Home Page
+  homepagemessage: 'Home page message'
+
+  topwidget_first: 'Top first widget'
+  topwidget_second: 'Top second widget'
+  topwidget_third: 'Top third widget' 
+
+  #Global Region
+  highlighted: 'Highlighted' 
+  page_title: 'Page title'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Left sidebar'
+  sidebar_second: 'Right sidebar'
+
+  #Parallax Widgets
+  services: 'Services'
+  clients: 'Clients'
+
+  #Bottom Widgets
+  bottom_first: 'Bottom first widget'
+  bottom_second: 'Bottom second widget'
+  bottom_third: 'Bottom third widget'
+  bottom_forth: 'Bottom forth widget'
+
+  #Address
+  google_map: 'Google map'
+  address: 'Address'
+
+  #Footer widgets
+  footer_first: 'Footer first widget'
+  footer_second: 'Footer second widget'
+  footer_third: 'Footer third widget'
+
+  auto_hidden_block: 'Auto hidden blocks'

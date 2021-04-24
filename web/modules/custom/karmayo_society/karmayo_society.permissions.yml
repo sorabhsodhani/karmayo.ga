@@ -1,0 +1,94 @@
+add karmayo society entity entities:
+  title: 'Create new Karmayo society entity entities'
+
+administer karmayo society entity entities:
+  title: 'Administer Karmayo society entity entities'
+  description: 'Allow to access the administration form to configure Karmayo society entity entities.'
+  restrict access: true
+
+delete karmayo society entity entities:
+  title: 'Delete Karmayo society entity entities'
+
+edit karmayo society entity entities:
+  title: 'Edit Karmayo society entity entities'
+
+view published karmayo society entity entities:
+  title: 'View published Karmayo society entity entities'
+
+view unpublished karmayo society entity entities:
+  title: 'View unpublished Karmayo society entity entities'
+
+view all karmayo society entity revisions:
+  title: 'View all Karmayo society entity revisions'
+
+revert all karmayo society entity revisions:
+  title: 'Revert all Karmayo society entity revisions'
+  description: 'Role requires permission <em>view Karmayo society entity revisions</em> and <em>edit rights</em> for karmayo society entity entities in question or <em>administer karmayo society entity entities</em>.'
+
+delete all karmayo society entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Karmayo society entity revisions</em> and <em>delete rights</em> for karmayo society entity entities in question or <em>administer karmayo society entity entities</em>.'
+
+add karmayo society tasks entity entities:
+  title: 'Create new Karmayo Society Tasks Entity entities'
+
+administer karmayo society tasks entity entities:
+  title: 'Administer Karmayo Society Tasks Entity entities'
+  description: 'Allow to access the administration form to configure Karmayo Society Tasks Entity entities.'
+  restrict access: true
+
+delete karmayo society tasks entity entities:
+  title: 'Delete Karmayo Society Tasks Entity entities'
+
+edit karmayo society tasks entity entities:
+  title: 'Edit Karmayo Society Tasks Entity entities'
+
+view published karmayo society tasks entity entities:
+  title: 'View published Karmayo Society Tasks Entity entities'
+
+view unpublished karmayo society tasks entity entities:
+  title: 'View unpublished Karmayo Society Tasks Entity entities'
+
+add society user pledge entity entities:
+  title: 'Create new Society user pledge entity entities'
+
+administer society user pledge entity entities:
+  title: 'Administer Society user pledge entity entities'
+  description: 'Allow to access the administration form to configure Society user pledge entity entities.'
+  restrict access: true
+
+delete society user pledge entity entities:
+  title: 'Delete Society user pledge entity entities'
+
+edit society user pledge entity entities:
+  title: 'Edit Society user pledge entity entities'
+
+edit own society user pledge entity entities:
+  title: 'Edit Own Society user pledge entities'  
+
+view published society user pledge entity entities:
+  title: 'View published Society user pledge entity entities'
+
+view unpublished society user pledge entity entities:
+  title: 'View unpublished Society user pledge entity entities'
+
+add society user points entity entities:
+  title: 'Create new Society user points entity entities'
+
+administer society user points entity entities:
+  title: 'Administer Society user points entity entities'
+  description: 'Allow to access the administration form to configure Society user points entity entities.'
+  restrict access: true
+
+delete society user points entity entities:
+  title: 'Delete Society user points entity entities'
+
+edit society user points entity entities:
+  title: 'Edit Society user points entity entities'
+
+view published society user points entity entities:
+  title: 'View published Society user points entity entities'
+
+view unpublished society user points entity entities:
+  title: 'View unpublished Society user points entity entities'
+

@@ -1,0 +1,14 @@
+uuid: b0c1df68-7ac8-490a-93cc-ee3eef8cc51c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.karmayo_society_user
+  module:
+    - user
+id: user_add_role_action.karmayo_society_user
+label: 'Add the Karmayo - Society User role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: karmayo_society_user

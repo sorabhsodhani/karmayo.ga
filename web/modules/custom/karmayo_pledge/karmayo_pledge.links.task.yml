@@ -1,0 +1,26 @@
+# Karmayo Pledge routing definition
+karmayo_pledge.settings_tab:
+  route_name: karmayo_pledge.settings
+  title: 'Settings'
+  base_route: karmayo_pledge.settings
+
+entity.karmayo_pledge.canonical:
+  route_name: entity.karmayo_pledge.canonical
+  base_route: entity.karmayo_pledge.canonical
+  title: 'View'
+
+entity.karmayo_pledge.edit_form:
+  route_name: entity.karmayo_pledge.edit_form
+  base_route: entity.karmayo_pledge.canonical
+  title: 'Edit'
+
+entity.karmayo_pledge.version_history:
+  route_name: entity.karmayo_pledge.version_history
+  base_route: entity.karmayo_pledge.canonical
+  title: 'Revisions'
+
+entity.karmayo_pledge.delete_form:
+  route_name:  entity.karmayo_pledge.delete_form
+  base_route:  entity.karmayo_pledge.canonical
+  title: Delete
+  weight: 10

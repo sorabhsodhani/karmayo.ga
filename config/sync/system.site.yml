@@ -1,0 +1,15 @@
+uuid: 0451cabd-9a71-4342-a347-6963529c752d
+name: Karmayo
+mail: challa.sravya12@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''

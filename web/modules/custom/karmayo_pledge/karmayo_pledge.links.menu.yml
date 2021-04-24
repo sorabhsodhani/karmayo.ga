@@ -1,0 +1,47 @@
+karmayo.main:
+  title: Karmayo
+  description: 'Karmayo'
+  route_name: entity.karmayo_pledge.collection
+  weight: 7
+  parent: system.admin
+
+karmayo_life.main:
+  title: Karmayo Life
+  description: 'Karmayo Life related Links.'
+  route_name: entity.karmayo_pledge.collection
+  weight: 1
+  parent: karmayo.main
+
+
+
+# Karmayo Pledge menu items definition
+entity.karmayo_pledge.collection:
+  title: 'Karmayo Pledge list'
+  route_name: entity.karmayo_pledge.collection
+  description: 'List Karmayo Pledge entities'
+  parent: karmayo_life.main
+  weight: 100
+
+karmayo_pledge.admin.structure.settings:
+  title: 'Karmayo Pledge settings'
+  description: 'Configure Karmayo Pledge entities'
+  route_name: karmayo_pledge.settings
+  parent: system.admin_structure
+
+karmayo_pledge.user_task_list:
+  title: 'My Tasks'
+  weight: -12
+  route_name: view.my_tasks.page_1
+  menu_name: account
+
+karmayo_pledge.karmayo_leaderboard:
+  title: 'Karmayo Leaderboard'
+  weight: -13
+  route_name: view.karmayo_leaderboard.page_1
+  menu_name: account
+  
+karmayo_pledge.karmayo_monthly_leaderboard:
+  title: 'Karmayo Monthly Leaderboard'
+  weight: -13
+  route_name: karmayo_pledge.karmayo_monthly_leaderboard
+  menu_name: account  

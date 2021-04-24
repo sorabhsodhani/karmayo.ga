@@ -1,0 +1,26 @@
+uuid: 4601e375-e773-4e3a-bcbd-909c81299270
+langcode: en
+status: true
+dependencies:
+  module:
+    - karmayo_pledge
+    - system
+  theme:
+    - karmayo
+id: monthlyleaderboardblock
+theme: karmayo
+region: sidebar_first
+weight: 0
+provider: null
+plugin: monthly_leaderboard_block
+settings:
+  id: monthly_leaderboard_block
+  label: 'Monthly Leaderboard!'
+  provider: karmayo_pledge
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /karmayo/monthly-leaderboard
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,47 @@
+uuid: a0c39455-6775-45af-9553-8a8e2eabba9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_user_associated_societies
+    - field.field.user.user.field_user_display_name
+    - field.field.user.user.field_userpoints_default_points
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_user_associated_societies:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_user_display_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  contact: true
+  field_userpoints_default_points: true
+  language: true
+  timezone: true
+  user_picture: true

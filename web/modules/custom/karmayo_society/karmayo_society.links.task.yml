@@ -1,0 +1,89 @@
+# Karmayo society entity routing definition
+karmayo_society.settings_tab:
+  route_name: karmayo_society.settings
+  title: 'Settings'
+  base_route: karmayo_society.settings
+
+entity.karmayo_society.canonical:
+  route_name: entity.karmayo_society.canonical
+  base_route: entity.karmayo_society.canonical
+  title: 'View'
+
+entity.karmayo_society.edit_form:
+  route_name: entity.karmayo_society.edit_form
+  base_route: entity.karmayo_society.canonical
+  title: 'Edit'
+
+entity.karmayo_society.version_history:
+  route_name: entity.karmayo_society.version_history
+  base_route: entity.karmayo_society.canonical
+  title: 'Revisions'
+
+entity.karmayo_society.delete_form:
+  route_name:  entity.karmayo_society.delete_form
+  base_route:  entity.karmayo_society.canonical
+  title: Delete
+  weight: 10
+# Karmayo Society Tasks Entity routing definition
+karmayo_society_tasks.settings_tab:
+  route_name: karmayo_society_tasks.settings
+  title: 'Settings'
+  base_route: karmayo_society_tasks.settings
+
+entity.karmayo_society_tasks.canonical:
+  route_name: entity.karmayo_society_tasks.canonical
+  base_route: entity.karmayo_society_tasks.canonical
+  title: 'View'
+
+entity.karmayo_society_tasks.edit_form:
+  route_name: entity.karmayo_society_tasks.edit_form
+  base_route: entity.karmayo_society_tasks.canonical
+  title: 'Edit'
+
+entity.karmayo_society_tasks.delete_form:
+  route_name:  entity.karmayo_society_tasks.delete_form
+  base_route:  entity.karmayo_society_tasks.canonical
+  title: Delete
+  weight: 10
+# Society user pledge entity routing definition
+karmayo_society_pledge.settings_tab:
+  route_name: karmayo_society_pledge.settings
+  title: 'Settings'
+  base_route: karmayo_society_pledge.settings
+
+entity.karmayo_society_pledge.canonical:
+  route_name: entity.karmayo_society_pledge.canonical
+  base_route: entity.karmayo_society_pledge.canonical
+  title: 'View'
+
+entity.karmayo_society_pledge.edit_form:
+  route_name: entity.karmayo_society_pledge.edit_form
+  base_route: entity.karmayo_society_pledge.canonical
+  title: 'Edit'
+
+entity.karmayo_society_pledge.delete_form:
+  route_name:  entity.karmayo_society_pledge.delete_form
+  base_route:  entity.karmayo_society_pledge.canonical
+  title: Delete
+  weight: 10
+# Society user points entity routing definition
+karmayo_society_user_points.settings_tab:
+  route_name: karmayo_society_user_points.settings
+  title: 'Settings'
+  base_route: karmayo_society_user_points.settings
+
+entity.karmayo_society_user_points.canonical:
+  route_name: entity.karmayo_society_user_points.canonical
+  base_route: entity.karmayo_society_user_points.canonical
+  title: 'View'
+
+entity.karmayo_society_user_points.edit_form:
+  route_name: entity.karmayo_society_user_points.edit_form
+  base_route: entity.karmayo_society_user_points.canonical
+  title: 'Edit'
+
+entity.karmayo_society_user_points.delete_form:
+  route_name:  entity.karmayo_society_user_points.delete_form
+  base_route:  entity.karmayo_society_user_points.canonical
+  title: Delete
+  weight: 10

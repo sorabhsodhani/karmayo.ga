@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Contains karmayo_pledge.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+use Drupal\karmayo_pledge\Entity\KarmayoPledgeEntity;
+use \Drupal\user\UserInterface;
+
+/**
+ * Implements hook_help().
+ */
+function karmayo_pledge_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the karmayo_pledge module.
+    case 'help.page.karmayo_pledge':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Karmayo pledge workflow') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+* Implements hook_views_pre_render().
+*/
+function karmayo_pledge_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'my_tasks')) {
+    $view->element['#attached']['library'][] = 'karmayo_pledge/CountdownTimer';
+    $view->element['#attached']['library'][] = 'karmayo_pledge/CountdownTimerInit';
+    $view->element['#attached']['library'][] = 'karmayo_pledge/updateTasks';
+  }
+}
+
+/**
+ * @param array $suggestions
+ * @param array $variables
+ * @param $hook
+ */
+function karmayo_pledge_theme_suggestions_views_view_field_alter(array &$suggestions, array &$variables, $hook)
+{
+    if ($variables['view']->id() && $variables['view']->current_display) {
+        $suggestions[] = $hook . '__' . $variables['view']->id() . '__' . $variables['view']->current_display . '__' . $variables['field']->field;
+    }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function karmayo_pledge_entity_presave(EntityInterface $entity) {
+   if ($entity->getEntityType()->id() == 'karmayo_pledge') {
+     // Add points if teh task is performed.
+     if ($entity->get('activity_status')->value == 2) {
+       $nid = $entity->get('node_id')->getValue();
+       if (!empty($nid)) {
+          $node = Node::load($nid[0]['target_id']);
+          $points_factor = $node->get('field_karma_act_points_factor')->value;
+          $user = $entity->getOwner();
+          $userName = $user->getUsername();
+          $stake_points = $entity->get('activity_points')->value;
+           \Drupal\transaction\Entity\Transaction::create([
+             'type' => 'userpoints_default_points',
+             'target_entity' => $user,
+             'field_userpoints_default_amount' => ($points_factor * $stake_points),
+           ])->execute();
+       }
+     }
+   }
+}
+
+/**
+ * Implements hook_ENTITY_insert() for user entities.
+ */
+function karmayo_pledge_user_insert($user) {
+  // Get the current user id.
+  $current_user_id = \Drupal::currentUser()->id();
+  if ($current_user_id == 0) {
+    \Drupal\transaction\Entity\Transaction::create([
+        'type' => 'userpoints_default_points',
+        'target_entity' => $user,
+        'field_userpoints_default_amount' => 100,
+        'field_userpoints_default_balance' => 0,
+      ])->execute();
+  }
+}

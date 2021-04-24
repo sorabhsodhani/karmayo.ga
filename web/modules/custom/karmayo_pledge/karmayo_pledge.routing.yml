@@ -1,0 +1,44 @@
+karmayo_pledge.karmayo_user_pick_form:
+  path: '/pledge-today'
+  defaults:
+    _form: '\Drupal\karmayo_pledge\Form\KarmayoUserPickForm'
+    _title: 'Pick a task for today'
+  requirements:
+    _role: 'authenticated'
+
+karmayo_pledge.user_pledge_list:
+  path: '/pledge-list/{uid}'
+  defaults:
+    _controller: '\Drupal\karmayo_pledge\Controller\UserPlegeListController::getUserPickedActivities'
+    _title: 'Pledge List'
+  options:
+    parameters:
+      user:
+        type: entity:user
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+karmayo_pledge.user_task_list:
+  path: '/tasks-list'
+  defaults:
+    _controller: '\Drupal\karmayo_pledge\Controller\UserPlegeListController::userPledgeListPage'
+    _title: 'My Tasks'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+karmayo_pledge.karmayo_monthly_leaderboard:
+  path: '/karmayo/monthly-leaderboard'
+  defaults:
+    _form: '\Drupal\karmayo_pledge\Form\MonthlyLeaderBoardForm'
+    _title: 'MonthlyLeaderBoardForm'
+  requirements:
+    _access: 'TRUE'
+
+karmayo_pledge.ajax_update_to_perform_controller_update_to_perfrom:
+  path: '/karmayo/update-to-perform/{kid}'
+  defaults:
+    _controller: '\Drupal\karmayo_pledge\Controller\AjaxUpdateToPerformController::update_to_perfrom'
+    _title: 'UpdateToPerform'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'

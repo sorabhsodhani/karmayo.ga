@@ -1,0 +1,14 @@
+# global components
+global-styling:
+  Version: 1.x
+  css:
+    theme:
+      css/global.css: {}
+  js:
+    js/custom.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

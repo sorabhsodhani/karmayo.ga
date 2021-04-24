@@ -1,0 +1,27 @@
+uuid: 2e13a195-7499-4a0d-b018-e7aaa2ea5c17
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - karmayo
+_core:
+  default_config_hash: Ib_0cR6nFZy2Aly0xZWsNrsscpWynT27-q1kpAT090Y
+id: karmayo_main_menu
+theme: karmayo
+region: primary_menu
+weight: 10
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

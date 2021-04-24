@@ -1,0 +1,22 @@
+uuid: 5f4e4200-a08c-4c0d-9063-dc49d80ec23a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - karmayo
+_core:
+  default_config_hash: '-6FrRS1sDI887PMkzsylppCZY0YzZLT_fgxx3gdoOVI'
+id: karmayo_messages
+theme: karmayo
+region: highlighted
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

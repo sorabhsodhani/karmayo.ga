@@ -1,0 +1,22 @@
+uuid: f14cd9e3-f9f7-462a-b810-26aed1682f90
+langcode: en
+status: true
+dependencies:
+  theme:
+    - karmayo
+_core:
+  default_config_hash: eI1jFud8wZPs_K_P7oDya4G7gQKrnSufgMP9VAopI2s
+id: karmayo_local_tasks
+theme: karmayo
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

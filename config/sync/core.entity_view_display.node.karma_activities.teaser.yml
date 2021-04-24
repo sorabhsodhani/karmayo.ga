@@ -1,0 +1,33 @@
+uuid: 27352e42-5b34-473b-b562-4df7725c137f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.karma_activities.body
+    - field.field.node.karma_activities.field_karma_act_points_factor
+    - node.type.karma_activities
+  module:
+    - text
+    - user
+id: node.karma_activities.teaser
+targetEntityType: node
+bundle: karma_activities
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_karma_act_points_factor: true

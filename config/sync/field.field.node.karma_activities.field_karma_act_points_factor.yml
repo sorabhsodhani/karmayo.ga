@@ -1,0 +1,23 @@
+uuid: bcdef01e-179a-4013-bbb9-7795a3eda36d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_karma_act_points_factor
+    - node.type.karma_activities
+id: node.karma_activities.field_karma_act_points_factor
+field_name: field_karma_act_points_factor
+entity_type: node
+bundle: karma_activities
+label: 'Points Factor'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

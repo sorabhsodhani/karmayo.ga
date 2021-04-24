@@ -1,0 +1,5 @@
+entity.karmayo_pledge.add_form:
+  route_name: entity.karmayo_pledge.add_form
+  title: 'Add Karmayo Pledge'
+  appears_on:
+    - entity.karmayo_pledge.collection

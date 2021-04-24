@@ -1,0 +1,22 @@
+uuid: 81ef3ace-a60b-4008-a803-ff1b6359f006
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - karmayo
+_core:
+  default_config_hash: _Lf-VmJRNESoDU1ikAjiaDG8V68B4-4oB1CiDIWT7Ds
+id: karmayo_content
+theme: karmayo
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

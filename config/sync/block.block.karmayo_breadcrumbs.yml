@@ -1,0 +1,22 @@
+uuid: 5ca04781-8745-4231-95e4-e3bd80b076e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - karmayo
+_core:
+  default_config_hash: UApb-GbF9pRRJML6r6e33eXgOucYBDo9-fEPKsebAnQ
+id: karmayo_breadcrumbs
+theme: karmayo
+region: breadcrumb
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

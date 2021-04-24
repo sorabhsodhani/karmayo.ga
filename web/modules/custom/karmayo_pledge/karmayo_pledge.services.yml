@@ -1,0 +1,3 @@
+services:
+  karmayo_pledge.core:
+    class: Drupal\karmayo_pledge\KarmayoCoreService

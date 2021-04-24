@@ -1,0 +1,22 @@
+uuid: 0731ace2-f6e4-4a96-bf2a-e0fdb528e460
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - karmayo
+_core:
+  default_config_hash: vgKxwOZLWW1IhyV_PvUA0JRxI8WDt0jNnzhXghM0RAY
+id: karmayo_powered
+theme: karmayo
+region: sidebar_first
+weight: -5
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,35 @@
+CountdownTimerInit:
+  version: VERSION
+  js:
+    js/field_timer.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+CountdownTimer:
+  remote: https://harshen.github.io/jQuery-countdownTimer/
+  version: 2.0.1
+  license:
+    name: GPL
+    url: https://github.com/harshen/jQuery-countdownTimer/blob/master/LICENSE-GPL.md
+  js:
+    /libraries/Countdown/src/countdown.js: {}
+  dependencies:
+    - core/jquery
+global_datatables_library:
+  js:
+    js/datatablesinit.js: {}
+    //cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js: {}
+    //cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js: {}
+
+updateTasks:
+  version: VERSION
+  js:
+    js/updateTasks.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

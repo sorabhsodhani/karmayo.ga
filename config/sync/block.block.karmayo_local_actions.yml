@@ -1,0 +1,20 @@
+uuid: 34d14903-0a0d-47ef-9e69-a009c2054725
+langcode: en
+status: false
+dependencies:
+  theme:
+    - karmayo
+_core:
+  default_config_hash: a4SgNAeXPGzhuoL_OBateNlgRA4CEF3UXzdTvcUtbFc
+id: karmayo_local_actions
+theme: karmayo
+region: sidebar_first
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+{#
+/**
+ * @file karmayo_pledge.html.twig
+ * Default theme implementation to present Karmayo Pledge data.
+ *
+ * This template is used when viewing Karmayo Pledge pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_karmayo_pledge()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('karmayo_pledge') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

@@ -1,0 +1,20 @@
+uuid: d6986e2e-2df1-4ee7-96ed-53e5f5f1d841
+langcode: en
+status: true
+dependencies:
+  module:
+    - karmayo_society
+    - user
+id: user.field_user_associated_societies
+field_name: field_user_associated_societies
+entity_type: user
+type: entity_reference
+settings:
+  target_type: karmayo_society
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,14 @@
+uuid: 1a937ae6-ad94-4474-92c0-7155e40be7d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.karmayo_life
+  module:
+    - user
+id: user_remove_role_action.karmayo_life
+label: 'Remove the Karmayo Life role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: karmayo_life

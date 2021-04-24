@@ -1,0 +1,29 @@
+uuid: 57e32589-ff20-4298-9c86-0dba5de7d9f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - karmayo_society
+id: karmayo_society.karmayo_society.default
+targetEntityType: karmayo_society
+bundle: karmayo_society
+mode: default
+content:
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  society_owner_id:
+    label: hidden
+    type: entity_reference_label
+    weight: 1
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  user_id: true

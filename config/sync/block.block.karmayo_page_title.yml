@@ -1,0 +1,20 @@
+uuid: d0700e66-4b35-4a5d-8cd5-9e922855f7ec
+langcode: en
+status: true
+dependencies:
+  theme:
+    - karmayo
+_core:
+  default_config_hash: 5M0xZRyIoJdR89B-0-1DQzNgi4Godwv9sMBDObaMh5U
+id: karmayo_page_title
+theme: karmayo
+region: page_title
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

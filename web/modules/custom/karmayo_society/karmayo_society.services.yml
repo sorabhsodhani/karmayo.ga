@@ -1,0 +1,3 @@
+services:
+  karmayo_society.core:
+    class: Drupal\karmayo_society\KarmayoSocietyCoreService

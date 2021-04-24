@@ -1,0 +1,22 @@
+{#
+/**
+ * @file karmayo_society_tasks.html.twig
+ * Default theme implementation to present Karmayo Society Tasks Entity data.
+ *
+ * This template is used when viewing Karmayo Society Tasks Entity pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_karmayo_society_tasks()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('karmayo_society_tasks') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

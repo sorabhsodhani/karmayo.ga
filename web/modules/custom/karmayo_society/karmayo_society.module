@@ -1,0 +1,172 @@
+<?php
+
+/**
+ * @file
+ * Contains karmayo_society.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\karmayo_society\Entity\KarmayoSocietyEntity;
+use Drupal\karmayo_society\KarmayoSocietyCoreService;
+use Drupal\user\Entity\User;
+use Drupal\karmayo_society\Entity\SocietyTasksEntity;
+use Drupal\karmayo_society\Entity\SocietyUserPointsEntity;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_help().
+ */
+function karmayo_society_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the karmayo_society module.
+    case 'help.page.karmayo_society':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Helps in building a societal groups') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function karmayo_society_entity_update(EntityInterface $entity) {
+  // Check if the entity is new.
+  $new_check = $entity->isNew();
+  if (!$new_check) {
+    $entity_original = $entity->original;
+  }
+  $bundle = $entity->bundle();
+  if ($bundle == 'karmayo_society') {
+   $moderator = $entity->society_owner_id->entity;
+   
+   if (isset($entity_original)) {
+    $moderator_original = $entity->original->society_owner_id->entity;
+    if ($moderator->id() != $moderator_original->id()) {
+      $moderator_role_applicable_check = KarmayoSocietyCoreService::isUserModeratorForOtherSocieties($moderator_original->id(), $entity->id());
+      if (!$moderator_role_applicable_check) {
+        KarmayoSocietyCoreService::removeUserRole($moderator_original, 'karmayo_society_moderator');
+      }
+    }
+   }
+   $moderator_role_applicable_check = KarmayoSocietyCoreService::isUserModeratorForOtherSocieties($moderator->id(), $entity->id());
+   if (!$moderator_role_applicable_check) {
+    KarmayoSocietyCoreService::addUserRole($moderator, 'karmayo_society_moderator');
+   }
+  }
+  
+  else if ($bundle == 'karmayo_society_pledge') {
+    $user_field_value = $entity->get('society_pledge_user_id')->getValue();
+    $sid_field_value = $entity->get('society_pledge_societyid')->getValue();
+    $task_id_field_value = $entity->get('society_pledge_taskid')->getValue();
+    $pledge_status = $entity->get('society_activity_status')->value;
+    $pledge_points = $entity->get('society_activity_points')->value;
+    
+    if (!empty($user_field_value) && !empty($sid_field_value) && !empty($task_id_field_value)) {
+      
+      $uid = $user_field_value[0]['target_id'];
+      $sid = $sid_field_value[0]['target_id'];
+      $task_id = $task_id_field_value[0]['target_id'];
+      
+      $user = User::load($uid);
+      $task = SocietyTasksEntity::load($task_id);
+      
+      $task_points = $task->get('society_task_pointfactor')->value;
+      $amount = 0;
+      if ($pledge_status == 2) {
+        $amount = $task_points * $pledge_points;
+        // Create a society user points entry i.e deduct the stake points.
+      $user_point_entity = SocietyUserPointsEntity::create([
+        'name' => $user->get('field_user_display_name')->value . ' - ' . $task->getName(),
+        'society_points_societyid' => $sid,
+        'user_id' => $user->id(),
+        'society_user_points_amount' => $amount,
+        'society_points_user_taskid' => $entity->id(),
+        'society_points_taskid' => $task_id
+      ]);
+      if (!$user_point_entity->save()) {
+        \Drupal::logger('karmayo_society_user_points')->error('There has been an issue while updating the user uid ' . $user->id() . ' for sid ' . $sid);
+      }
+      }
+      
+      
+    }
+  }
+  
+}
+
+function karmayo_society_entity_insert(EntityInterface $entity) {
+  $bundle = $entity->bundle();
+   if ($entity->getEntityTypeId()  == 'karmayo_society_pledge') {
+    $user_field_value = $entity->get('society_pledge_user_id')->getValue();
+    $sid_field_value = $entity->get('society_pledge_societyid')->getValue();
+    $task_id_field_value = $entity->get('society_pledge_taskid')->getValue();
+    $pledge_status = $entity->get('society_activity_status')->value;
+    $pledge_points = $entity->get('society_activity_points')->value;
+    
+    if (!empty($user_field_value) && !empty($sid_field_value) && !empty($task_id_field_value)) {
+      
+      $uid = $user_field_value[0]['target_id'];
+      $sid = $sid_field_value[0]['target_id'];
+      $task_id = $task_id_field_value[0]['target_id'];
+      
+      $user = User::load($uid);
+      $task = SocietyTasksEntity::load($task_id);
+      
+      $task_points = $task->get('society_task_pointfactor')->value;
+      $amount = 0;
+      if ($pledge_status == 0) {
+        $amount = -1 * $pledge_points;
+      }
+      
+      
+      // Create a society user points entry i.e deduct the stake points.
+      $user_point_entity = SocietyUserPointsEntity::create([
+        'name' => $user->get('field_user_display_name')->value . ' - ' . $task->getName(),
+        'society_points_societyid' => $sid,
+        'user_id' => $user->id(),
+        'society_user_points_amount' => $amount,
+        'society_points_user_taskid' => $entity->id(),
+        'society_points_taskid' => $task_id
+      ]);
+      if ($user_point_entity->save()) {
+        return TRUE;
+      }
+      else {
+        \Drupal::logger('karmayo_society_user_points')->error('There has been an issue while updating the user uid ' . $user->id() . ' for sid ' . $sid);
+      }
+    }
+   }
+}
+
+function karmayo_society_entity_presave(EntityInterface $entity) {
+  $bundle = $entity->bundle();
+  
+  if ($bundle == 'karmayo_society_user_points') {
+    $user_field_value = $entity->get('user_id')->getValue();
+    $sid_field_value = $entity->get('society_points_societyid')->getValue();
+    if (!empty($user_field_value) && !empty($sid_field_value)) {
+      $uid = $user_field_value[0]['target_id'];
+      $sid = $sid_field_value[0]['target_id'];
+      $user = User::load($uid);
+      $last_balance = KarmayoSocietyCoreService::getSocietyUserBalancePoints($user, $sid);
+      $amount = $entity->get('society_user_points_amount')->value;
+      $new_balance = $amount + $last_balance;
+      $entity->set('society_user_points_balance', $new_balance);
+    }
+  }
+}
+
+/**
+* Implements hook_views_pre_render().
+*/
+function karmayo_society_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'society_pledge_tasks')) {
+    $view->element['#attached']['library'][] = 'karmayo_pledge/CountdownTimer';
+    $view->element['#attached']['library'][] = 'karmayo_pledge/CountdownTimerInit';
+    $view->element['#attached']['library'][] = 'karmayo_pledge/updateTasks';
+  }
+}

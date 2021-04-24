@@ -1,0 +1,23 @@
+uuid: 33905da6-4d0c-4805-b406-9c3a37d1491b
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - karmayo
+_core:
+  default_config_hash: 3dKXHsZSniz1i1DLj7JOeK2-sukfHGCdG2Sgce_zZLE
+id: karmayo_search
+theme: karmayo
+region: header
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: ''
+visibility: {  }

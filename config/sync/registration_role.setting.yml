@@ -1,0 +1,8 @@
+role_to_select:
+  karmayo_life: karmayo_life
+  administrator: '0'
+  karmayo_society_moderator: '0'
+  karmayo_society_user: '0'
+registration_mode: user
+_core:
+  default_config_hash: o1wWkhSOJotsHFgvzESaUOiTWhLak62cKBDyEtewAIM

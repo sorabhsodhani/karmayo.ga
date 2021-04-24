@@ -1,0 +1,14 @@
+uuid: f6611f77-f8ab-4f36-afdb-a8ab535e1c1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.karmayo_society_user
+  module:
+    - user
+id: user_remove_role_action.karmayo_society_user
+label: 'Remove the Karmayo - Society User role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: karmayo_society_user

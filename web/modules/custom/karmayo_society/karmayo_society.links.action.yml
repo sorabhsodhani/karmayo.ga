@@ -1,0 +1,20 @@
+entity.karmayo_society.add_form:
+  route_name: entity.karmayo_society.add_form
+  title: 'Add Karmayo society entity'
+  appears_on:
+    - entity.karmayo_society.collection
+entity.karmayo_society_tasks.add_form:
+  route_name: entity.karmayo_society_tasks.add_form
+  title: 'Add Karmayo Society Tasks Entity'
+  appears_on:
+    - entity.karmayo_society_tasks.collection
+entity.karmayo_society_pledge.add_form:
+  route_name: entity.karmayo_society_pledge.add_form
+  title: 'Add Society user pledge entity'
+  appears_on:
+    - entity.karmayo_society_pledge.collection
+entity.karmayo_society_user_points.add_form:
+  route_name: entity.karmayo_society_user_points.add_form
+  title: 'Add Society user points entity'
+  appears_on:
+    - entity.karmayo_society_user_points.collection

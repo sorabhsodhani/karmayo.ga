@@ -1,0 +1,9 @@
+uuid: 0fc18edc-297a-496e-87e2-944832f974e6
+langcode: en
+status: true
+dependencies: {  }
+id: karmayo_life
+label: 'Karmayo Life'
+weight: 3
+is_admin: null
+permissions: {  }

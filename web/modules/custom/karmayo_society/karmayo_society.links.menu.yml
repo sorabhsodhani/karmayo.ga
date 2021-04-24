@@ -1,0 +1,63 @@
+karmayo_society.main:
+  title: Karmayo Society
+  description: 'Karmayo society related Links.'
+  route_name: entity.karmayo_society.collection
+  weight: 2
+  parent: karmayo.main
+
+
+# Karmayo society entity menu items definition
+entity.karmayo_society.collection:
+  title: 'Karmayo society entity list'
+  route_name: entity.karmayo_society.collection
+  description: 'List Karmayo society entity entities'
+  parent: karmayo_society.main
+  weight: 100
+
+karmayo_society.admin.structure.settings:
+  title: 'Karmayo society entity settings'
+  description: 'Configure Karmayo society entity entities'
+  route_name: karmayo_society.settings
+  parent: system.admin_structure
+
+# Karmayo Society Tasks Entity menu items definition
+entity.karmayo_society_tasks.collection:
+  title: 'Karmayo Society Tasks Entity list'
+  route_name: entity.karmayo_society_tasks.collection
+  description: 'List Karmayo Society Tasks Entity entities'
+  parent: karmayo_society.main
+  weight: 100
+
+karmayo_society_tasks.admin.structure.settings:
+  title: 'Karmayo Society Tasks Entity settings'
+  description: 'Configure Karmayo Society Tasks Entity entities'
+  route_name: karmayo_society_tasks.settings
+  parent: system.admin_structure
+
+# Society user pledge entity menu items definition
+entity.karmayo_society_pledge.collection:
+  title: 'Society user pledge entity list'
+  route_name: entity.karmayo_society_pledge.collection
+  description: 'List Society user pledge entity entities'
+  parent: karmayo_society.main
+  weight: 100
+
+karmayo_society_pledge.admin.structure.settings:
+  title: 'Society user pledge entity settings'
+  description: 'Configure Society user pledge entity entities'
+  route_name: karmayo_society_pledge.settings
+  parent: system.admin_structure
+
+# Society user points entity menu items definition
+entity.karmayo_society_user_points.collection:
+  title: 'Society user points entity list'
+  route_name: entity.karmayo_society_user_points.collection
+  description: 'List Society user points entity entities'
+  parent: karmayo_society.main
+  weight: 100
+
+karmayo_society_user_points.admin.structure.settings:
+  title: 'Society user points entity settings'
+  description: 'Configure Society user points entity entities'
+  route_name: karmayo_society_user_points.settings
+  parent: system.admin_structure

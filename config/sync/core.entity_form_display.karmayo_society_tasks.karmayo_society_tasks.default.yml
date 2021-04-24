@@ -1,0 +1,45 @@
+uuid: d302d660-7a82-4898-ac19-e4b6c67ac17b
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - karmayo_society
+id: karmayo_society_tasks.karmayo_society_tasks.default
+targetEntityType: karmayo_society_tasks
+bundle: karmayo_society_tasks
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  society_id:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  society_task_pointfactor:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  society_task_start_date:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

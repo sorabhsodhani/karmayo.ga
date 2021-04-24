@@ -1,0 +1,23 @@
+uuid: f36bea63-ce22-412d-9afc-c794dabfb8f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.karma_activities
+  module:
+    - text
+id: node.karma_activities.body
+field_name: body
+entity_type: node
+bundle: karma_activities
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
