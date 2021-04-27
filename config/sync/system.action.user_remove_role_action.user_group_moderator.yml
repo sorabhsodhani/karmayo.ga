@@ -1,0 +1,14 @@
+uuid: b79028b8-18f6-4d80-8102-5e5bb9549f55
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.karmayo_society_moderator
+  module:
+    - user
+id: user_remove_role_action.karmayo_society_moderator
+label: 'Remove the Karmayo - Society Moderator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: karmayo_society_moderator

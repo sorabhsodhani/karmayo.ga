@@ -1,0 +1,17 @@
+uuid: db522fe3-0ee4-454e-959c-08c0a9dd4c97
+langcode: en
+status: true
+dependencies: {  }
+id: karmayo_society_moderator
+label: 'Karmayo - Society Moderator'
+weight: 4
+is_admin: null
+permissions:
+  - 'add karmayo society tasks entity entities'
+  - 'administer karmayo society tasks entity entities'
+  - 'edit karmayo society tasks entity entities'
+  - 'edit own society user pledge entity entities'
+  - 'view published karmayo society entity entities'
+  - 'view published karmayo society tasks entity entities'
+  - 'view published society user pledge entity entities'
+  - 'view published society user points entity entities'

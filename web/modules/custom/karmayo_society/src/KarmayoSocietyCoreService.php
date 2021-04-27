@@ -18,7 +18,7 @@ class KarmayoSocietyCoreService {
    */
   public static function isUserModeratorForOtherSocieties($uid = NULL, $society_id = NULL) {
     $query = \Drupal::entityQuery('karmayo_society')
-      ->condition('society_owner_id','userpoints_default_points')
+      ->condition('society_owner_id', $uid)
       ->condition('id',$society_id,'!=')
       ->execute(); 
     if (!empty($query)) {
