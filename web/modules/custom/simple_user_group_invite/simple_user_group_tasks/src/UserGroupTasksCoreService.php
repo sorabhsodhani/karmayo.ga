@@ -105,7 +105,7 @@ class UserGroupTasksCoreService {
   
     public static function getUserBalancePointsByGroup($user = NULL, $sid = NULL) {
      $query = \Drupal::service('entity.query')
-      ->get('simple_user_group_points')
+      ->get('user_group_points')
       ->condition('user_group_id', $sid)
       ->condition('user_id', $user->id())
       ->sort('created', 'DESC')

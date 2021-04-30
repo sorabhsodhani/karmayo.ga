@@ -32,7 +32,10 @@ module:
   image: 0
   inline_entity_form: 0
   karmayo_pledge: 0
-  karmayo_society: 0
+  simple_user_group_invite: 0
+  simple_user_group_points: 0
+  simple_user_group_tasks: 0
+  smtp: 0
   link: 0
   login_destination: 0
   media: 0
